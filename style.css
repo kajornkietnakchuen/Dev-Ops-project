@@ -32,24 +32,25 @@ body {
     color: var(--text);
     font-family: "Sarabun", "Noto Sans Thai", "Tahoma", sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 /* ===== โครงหลัก 2 คอลัมน์ ===== */
 .page {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 330px 1fr;
     width: 100%;
-    max-width: 1020px;
+    max-width: 1040px;
     overflow: hidden;
     background: var(--card);
+    border: 2px solid var(--navy-700);
     border-radius: var(--radius);
     box-shadow: 0 12px 32px rgba(27, 43, 66, 0.18);
 }
 
 /* ===== คอลัมน์ซ้าย ===== */
 .sidebar {
-    padding: 28px 24px;
+    padding: 24px 22px;
     color: #fff;
     text-align: center;
     background: linear-gradient(180deg, var(--navy-700), var(--navy-900));
@@ -59,7 +60,7 @@ body {
     display: block;
     width: 140px;
     height: 140px;
-    margin: 0 auto 14px;
+    margin: 0 auto 12px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.9);
@@ -69,41 +70,55 @@ body {
 
 .sidebar h1 {
     margin: 0;
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     line-height: 1.35;
 }
 
+/* กรอบข้อความสถานะ */
 .role {
-    margin: 8px 0 18px;
-    font-size: 0.95rem;
-    color: #b9c7da;
+    margin: 10px 0 16px;
+    padding: 8px 12px;
+    font-size: 0.92rem;
+    color: #dbe6f4;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
 }
 
 .side-block {
-    margin-top: 14px;
-    padding-top: 14px;
+    margin-top: 12px;
     text-align: left;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .side-block h2 {
     margin: 0 0 8px;
+    padding: 4px 12px;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #8fb0d6;
+    color: #fff;
+    background: var(--blue-500);
+    border-radius: 8px;
 }
 
 .side-block dl {
     margin: 0;
 }
 
-/* แถวข้อมูล: ป้ายซ้าย ค่าขวา */
+/* กรอบข้อมูลแต่ละแถว: ป้ายซ้าย ค่าขวา */
 .side-block dl div {
     display: flex;
     justify-content: space-between;
     gap: 12px;
-    padding: 3px 0;
+    margin-bottom: 6px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+}
+
+.side-block dl div:last-child {
+    margin-bottom: 0;
 }
 
 .side-block dt {
@@ -119,11 +134,11 @@ body {
 /* แถวข้อมูลแบบเรียงบนล่าง (ติดต่อ) */
 .side-block dl.stack div {
     display: block;
-    padding: 5px 0;
+    padding: 6px 12px 7px;
 }
 
 .side-block dl.stack dt {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .side-block dl.stack dd {
@@ -145,64 +160,47 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding: 28px 30px;
+    gap: 16px;
+    padding: 24px 26px;
     background: var(--gray-100);
 }
 
+/* กรอบการ์ดแต่ละหมวด */
 .card {
-    padding: 18px 22px 20px;
+    padding: 16px 20px 18px;
     background: var(--card);
-    border: 1px solid var(--gray-300);
+    border: 1.5px solid var(--gray-300);
+    border-top: 4px solid var(--blue-500);
     border-radius: 14px;
+    box-shadow: 0 3px 8px rgba(27, 43, 66, 0.06);
 }
 
 .card h2 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin: 0 0 12px;
+    padding-bottom: 8px;
     font-size: 1.15rem;
     color: var(--navy-700);
+    border-bottom: 2px dashed var(--gray-300);
 }
 
-.card h2::before {
-    content: "";
-    width: 5px;
-    height: 1.1em;
-    background: var(--blue-500);
-    border-radius: 3px;
-}
-
-/* ===== เส้นเวลาการศึกษา ===== */
+/* ===== การศึกษา: กรอบต่อรายการ ===== */
 .timeline {
     list-style: none;
     margin: 0;
-    padding: 0 0 0 6px;
-    border-left: 2px solid var(--gray-300);
+    padding: 0;
 }
 
 .timeline li {
-    position: relative;
-    margin-left: 18px;
-    padding: 6px 0 10px;
+    margin-bottom: 8px;
+    padding: 8px 14px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    border-left: 5px solid var(--blue-500);
+    border-radius: 10px;
 }
 
 .timeline li:last-child {
-    padding-bottom: 2px;
-}
-
-.timeline li::before {
-    content: "";
-    position: absolute;
-    left: -30px;
-    top: 12px;
-    width: 12px;
-    height: 12px;
-    background: var(--blue-500);
-    border: 3px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--blue-500);
+    margin-bottom: 0;
 }
 
 .level {
@@ -213,11 +211,11 @@ body {
 
 .school {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: var(--gray-500);
 }
 
-/* ===== ป้ายแท็ก ===== */
+/* ===== ป้ายแท็กมีกรอบ ===== */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -232,6 +230,7 @@ body {
     background: var(--blue-100);
     color: var(--navy-700);
     font-weight: 600;
+    border: 1.5px solid var(--blue-500);
     border-radius: 999px;
 }
 
@@ -247,6 +246,6 @@ body {
     }
 
     .content {
-        padding: 20px 16px;
+        padding: 18px 14px;
     }
 }
