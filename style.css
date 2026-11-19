@@ -99,3 +99,49 @@ ul:has(+ h2) {
         font-size: 1.5rem;
     }
 }
+/* ===== ส่วนหัว + รูปโปรไฟล์ ===== */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--green-500), var(--green-700));
+    color: #fff;
+    padding: 32px 16px 28px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    background: var(--green-100);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+}
+
+/* ล้างสไตล์ h1 เดิม เพราะตอนนี้พื้นหลังอยู่ที่ header แล้ว */
+.profile-header h1 {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.subtitle {
+    margin-top: 4px;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+@media (max-width: 600px) {
+    .avatar {
+        width: 130px;
+        height: 130px;
+    }
+}
